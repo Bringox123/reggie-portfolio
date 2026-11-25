@@ -1,6 +1,6 @@
 :root {
   --bg-default: #0e0e0e;
-  --bg-secondary: #1a1a1a;
+  --bg-secondary: rgba(24, 22, 19, 0.78);
   --bg-pill-hover: #1a1815;
   --text-default: #dac5a7;
   --text-muted: rgba(218, 197, 167, 0.6);
@@ -20,7 +20,7 @@
 
 html {
   scroll-behavior: smooth;
-  background: #0e0e0e;
+  background: #050505;
   color: #dac5a7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,11 +28,45 @@ html {
 
 body {
   margin: 0;
+  position: relative;
   font-family: var(--font-sans);
-  background: var(--bg-default);
+  background: transparent;
   color: var(--text-default);
   line-height: 1.6;
   overflow-x: clip;
+}
+
+header,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.site-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #050505;
+}
+
+.site-bg__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.06);
+  will-change: transform, filter;
+  opacity: 0.88;
+}
+
+.site-bg__vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 38%, rgba(10, 10, 10, 0.18) 0%, rgba(10, 10, 10, 0.68) 100%);
 }
 
 a {
@@ -358,6 +392,11 @@ textarea {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .site-bg__video {
+    transform: none !important;
+    filter: none !important;
   }
 
   *,

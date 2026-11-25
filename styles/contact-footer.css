@@ -3,7 +3,9 @@
    ========================================================================== */
 
 .contact-footer {
-  background: var(--bg-secondary, #1a1a1a);
+  background: rgba(16, 15, 13, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid var(--border-default, rgba(218, 197, 167, 0.15));
   padding-block: 100px 40px;
   color: var(--text-default, #dac5a7);
@@ -126,7 +128,9 @@
 }
 
 .contact-card {
-  background: var(--bg-secondary, #1a1a1a);
+  background: var(--bg-secondary, rgba(24, 22, 19, 0.78));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-default, rgba(218, 197, 167, 0.15));
   padding: 32px;
   display: flex;

@@ -649,10 +649,75 @@ function initContactForm() {
   });
 }
 
+/**
+ * Hybrid scroll-scrubbing + idle ambient playback controller for the background motion video.
+ * @param {boolean} prefersReducedMotion
+ */
+function initScrollMotionVideo(prefersReducedMotion) {
+  const video = document.querySelector('[data-bg-video]');
+  if (!video) return;
+
+  if (prefersReducedMotion) {
+    video.pause();
+    return;
+  }
+
+  const getScrollProgress = () => {
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    return Math.min(1, Math.max(0, window.scrollY / maxScroll));
+  };
+
+  let smoothProgress = getScrollProgress();
+  let baseOffset = 0;
+
+  const tick = () => {
+    const targetProgress = getScrollProgress();
+    smoothProgress += (targetProgress - smoothProgress) * 0.12;
+    const delta = Math.abs(targetProgress - smoothProgress);
+    const yShift = (0.5 - smoothProgress) * 28;
+    const duration = video.duration;
+    const hasDuration = Number.isFinite(duration) && duration > 0;
+
+    if (delta > 0.00035 && video.readyState >= 2 && hasDuration) {
+      if (!video.paused) {
+        video.pause();
+      }
+      const span = duration * 1.5;
+      const nextTime = (((baseOffset + smoothProgress * span) % duration) + duration) % duration;
+      if (!video.seeking && Math.abs(video.currentTime - nextTime) > 0.012) {
+        try {
+          video.currentTime = nextTime;
+        } catch {
+          // Ignore transient seek guards while media buffers.
+        }
+      }
+      const boost = 1 + Math.min(0.32, delta * 12);
+      video.style.transform = `translate3d(0, ${yShift.toFixed(2)}px, 0) scale(1.07)`;
+      video.style.filter = `brightness(${boost.toFixed(3)})`;
+    } else if (delta <= 0.00035 && hasDuration) {
+      const span = duration * 1.5;
+      baseOffset = (((video.currentTime - smoothProgress * span) % duration) + duration) % duration;
+      video.style.transform = `translate3d(0, ${yShift.toFixed(2)}px, 0) scale(1.07)`;
+      video.style.filter = 'brightness(1)';
+      if (video.playbackRate !== 0.45) {
+        video.playbackRate = 0.45;
+      }
+      if (video.paused) {
+        video.play().catch(() => {});
+      }
+    }
+
+    window.requestAnimationFrame(tick);
+  };
+
+  window.requestAnimationFrame(tick);
+}
+
 function init() {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const motionPromise = prefersReducedMotion ? Promise.resolve(null) : loadMotionEngine();
 
+  initScrollMotionVideo(prefersReducedMotion);
   initHeroAnimation(motionPromise, prefersReducedMotion);
   initScrollReveals(motionPromise, prefersReducedMotion);
   initNavigation(prefersReducedMotion);
