@@ -1,11 +1,18 @@
-# Reggie — Portfolio
+# Reginald Aaron Dobeng — Portfolio
 
-React 18 + Vite 6 + TypeScript + Tailwind CSS v4 + lucide-react.
+Semantic HTML5 + Custom CSS3 + Vanilla ES6+ JavaScript + Anime.js v4 portfolio website built with Vite.
+
+## Pages
+
+- `index.html` — Main Portfolio
+- `scaleup-pos.html` — ScaleUp POS Case Study
+- `resume.html` — Print-ready Resume
+
+## Scripts
 
 ```bash
 npm install
 npm run dev      # http://localhost:5173
-npm run build
+npm run build    # Multi-page production build to dist/
+npm run preview
 ```
-
-Dark by default with a light toggle (persisted in localStorage).

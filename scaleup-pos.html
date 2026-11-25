@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScaleUp POS — Case Study | Reginald Aaron Dobeng</title>
+    <meta
+      name="description"
+      content="Case study for ScaleUp POS: an offline-first point-of-sale web application engineered for uninterrupted retail and bakery checkout workflows."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/case-study.css" />
+    <link rel="stylesheet" href="./styles/contact-footer.css" />
+  </head>
+  <body id="top">
+    <header class="case-nav">
+      <div class="container case-nav__inner">
+        <a class="case-nav__back" href="./index.html#work">← Back to Portfolio</a>
+        <a
+          class="btn-primary"
+          href="https://pos.scaleupsite.online"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit Live App ↗
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="case-hero">
+        <div class="container">
+          <p class="section-eyebrow">UI/UX &amp; ENGINEERING CASE STUDY</p>
+          <h1 class="case-hero__title">ScaleUp <em>POS</em></h1>
+          <p class="case-hero__subtitle">
+            An offline-first point-of-sale web application engineered for uninterrupted retail and
+            bakery checkout workflows.
+          </p>
+
+          <div class="case-hero__meta">
+            <div class="meta-card">
+              <p class="meta-card__label">ROLE</p>
+              <p class="meta-card__value">Frontend Developer &amp; UI Designer</p>
+            </div>
+            <div class="meta-card">
+              <p class="meta-card__label">STATUS</p>
+              <p class="meta-card__value">Completed • Live Production</p>
+            </div>
+            <div class="meta-card">
+              <p class="meta-card__label">CORE STACK</p>
+              <p class="meta-card__value">
+                HTML5, CSS3, Vanilla JS, IndexedDB (Dexie.js), Django Templates
+              </p>
+            </div>
+            <div class="meta-card">
+              <p class="meta-card__label">LIVE URL</p>
+              <p class="meta-card__value">
+                <a
+                  class="meta-card__link"
+                  href="https://pos.scaleupsite.online"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  pos.scaleupsite.online
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="primary-interface" aria-label="Live application interface">
+        <div class="container">
+          <div class="browser-frame">
+            <div class="browser-frame__bar">
+              <img
+                class="browser-frame__controls"
+                src="./assets/icons/window-controls.svg"
+                alt=""
+                width="40"
+                height="8"
+              />
+              <span class="browser-frame__url">pos.scaleupsite.online</span>
+              <span class="browser-frame__tag">LIVE APPLICATION</span>
+            </div>
+
+            <div class="browser-frame__screen">
+              <img
+                src="./assets/images/scaleup-pos-main.png"
+                alt="ScaleUp POS live cashier checkout interface"
+                width="1384"
+                height="862"
+              />
+            </div>
+
+            <div class="browser-frame__caption">
+              <p>01 &nbsp;/&nbsp; CASHIER CHECKOUT</p>
+              <p>LIVE APPLICATION SCREENSHOT</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="architecture" id="architecture">
+        <div class="container">
+          <div class="section-intro">
+            <p class="section-eyebrow">THE THINKING BEHIND THE BUILD</p>
+            <h2 class="section-heading">Engineered for <em>continuity.</em></h2>
+          </div>
+
+          <div class="arch-grid">
+            <aside class="arch-summary">
+              <p class="arch-summary__eyebrow">CASE STUDY BREAKDOWN</p>
+              <h3 class="arch-summary__title">Built for uninterrupted checkout.</h3>
+              <p class="arch-summary__desc">
+                A closer look at the problem, the local-first architecture and the interface
+                decisions.
+              </p>
+
+              <nav class="arch-chapters" aria-label="Case study chapters">
+                <button type="button" class="chapter-btn is-active" data-chapter-btn="block-a">
+                  A / The Challenge
+                </button>
+                <button type="button" class="chapter-btn" data-chapter-btn="block-b">
+                  B / Offline-First Frontend Architecture
+                </button>
+                <button type="button" class="chapter-btn" data-chapter-btn="block-c">
+                  C / UI Design &amp; Django Template Integration
+                </button>
+              </nav>
+
+              <p class="arch-summary__hint">SCROLL THE NARRATIVE TO EXPLORE ↓</p>
+            </aside>
+
+            <div class="arch-blocks" data-reveal-group>
+              <article class="arch-block" id="block-a" data-reveal-item>
+                <p class="arch-block__num">BLOCK A</p>
+                <h3 class="arch-block__title">The Challenge</h3>
+                <p class="arch-block__body">
+                  Retail and bakery operations frequently face unstable internet connectivity.
+                  Standard cloud-dependent POS systems freeze during network drops, halting customer
+                  checkouts and delaying daily sales reconciliation.
+                </p>
+                <p class="arch-block__tag">RETAIL + BAKERY &nbsp;/&nbsp; NETWORK RESILIENCE</p>
+              </article>
+
+              <article class="arch-block" id="block-b" data-reveal-item>
+                <p class="arch-block__num">BLOCK B</p>
+                <h3 class="arch-block__title">Offline-First Frontend Architecture</h3>
+                <p class="arch-block__body">
+                  Engineered local browser persistence using IndexedDB via Dexie.js and
+                  LocalStorage. Cashiers can ring up orders, apply discounts, and manage cart state
+                  at zero latency while offline, automatically queuing transactions for background
+                  sync once connectivity returns.
+                </p>
+                <p class="arch-block__tag">INDEXEDDB &nbsp;/&nbsp; DEXIE.JS &nbsp;/&nbsp; LOCALSTORAGE</p>
+              </article>
+
+              <article class="arch-block" id="block-c" data-reveal-item>
+                <p class="arch-block__num">BLOCK C</p>
+                <h3 class="arch-block__title">UI Design &amp; Django Template Integration</h3>
+                <p class="arch-block__body">
+                  Designed a high-contrast, touch-friendly interface built entirely with semantic
+                  HTML5, custom CSS3 variables, and Vanilla JavaScript—eliminating heavy framework
+                  overhead—and integrated modular views cleanly into Django templates.
+                </p>
+                <p class="arch-block__tag">
+                  SEMANTIC HTML &nbsp;/&nbsp; CSS VARIABLES &nbsp;/&nbsp; DJANGO TEMPLATES
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="showcase-gallery" id="showcase">
+        <div class="container">
+          <div class="section-intro">
+            <p class="section-eyebrow">INTERFACE SHOWCASE</p>
+            <h2 class="section-heading">Clarity at <em>the counter.</em></h2>
+            <p class="section-sub">A closer look at the live cashier workspace.</p>
+          </div>
+
+          <div class="gallery-grid" data-reveal-group>
+            <figure class="gallery-card" data-reveal-item>
+              <div class="crop-viewport crop-viewport--catalog">
+                <img
+                  class="crop-img crop-img--catalog"
+                  src="./assets/images/scaleup-pos-main.png"
+                  alt="ScaleUp POS product catalogue and low-stock badges"
+                  width="1384"
+                  height="862"
+                />
+              </div>
+              <figcaption class="gallery-card__caption">
+                <h3 class="gallery-card__title">Product catalogue &amp; stock cues</h3>
+                <p class="gallery-card__desc">
+                  Product categories, clear stock cues and the cashier product catalogue.
+                </p>
+              </figcaption>
+            </figure>
+
+            <figure class="gallery-card" data-reveal-item>
+              <div class="crop-viewport crop-viewport--checkout">
+                <img
+                  class="crop-img crop-img--checkout"
+                  src="./assets/images/scaleup-pos-main.png"
+                  alt="ScaleUp POS order summary and cash, card, or MoMo payment controls"
+                  width="1384"
+                  height="862"
+                />
+              </div>
+              <figcaption class="gallery-card__caption">
+                <h3 class="gallery-card__title">Checkout &amp; payment controls</h3>
+                <p class="gallery-card__desc">
+                  Order summary, discounts and cash, card or MoMo payment controls.
+                </p>
+              </figcaption>
+            </figure>
+          </div>
+
+          <p class="gallery-footnote">DETAIL CROPS FROM THE LIVE SCALEUP POS INTERFACE</p>
+        </div>
+      </section>
+
+      <section class="next-project" aria-label="Next project">
+        <div class="container">
+          <a class="next-project__card" href="./index.html#work">
+            <div>
+              <p class="next-project__eyebrow">NEXT PROJECT &nbsp;→</p>
+              <h2 class="next-project__title">Selasie Farms</h2>
+              <p class="next-project__sub">Agricultural &amp; grocery e-commerce web platform</p>
+            </div>
+            <div class="next-project__meta">
+              <span class="badge-pill">In Progress</span>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="contact-footer" id="contact">
+      <div class="container">
+        <div class="contact-invite">
+          <p class="section-eyebrow">07 &nbsp;/&nbsp; CONTACT</p>
+          <h2>Let's build something <em>solid together.</em></h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-direct">
+            <p class="section-eyebrow">START A CONVERSATION</p>
+            <h3>Good things start with a hello.</h3>
+            <button
+              class="contact-email-trigger"
+              type="button"
+              data-copy-email="bringoxin@gmail.com"
+            >
+              <span>Email &nbsp;↗</span>
+              <span>bringoxin@gmail.com</span>
+            </button>
+            <a class="btn-secondary" href="./resume.html">Download PDF Resume</a>
+            <p class="contact-direct__note">
+              Available for frontend internships, junior developer roles, and UI collaborations.
+            </p>
+          </div>
+
+          <div class="contact-form-col">
+            <form class="contact-card" data-contact-form novalidate>
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Name</label>
+                <input
+                  class="form-field"
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  autocomplete="name"
+                  required
+                />
+                <p class="form-error" data-error="name" aria-live="polite"></p>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email</label>
+                <input
+                  class="form-field"
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                />
+                <p class="form-error" data-error="email" aria-live="polite"></p>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Message</label>
+                <textarea
+                  class="form-field"
+                  id="contact-message"
+                  name="message"
+                  placeholder="Tell me about your project or opportunity..."
+                  required
+                ></textarea>
+                <p class="form-error" data-error="message" aria-live="polite"></p>
+              </div>
+
+              <button class="btn-primary" type="submit">Send Message</button>
+
+              <div class="form-confirmation" data-form-confirmation hidden></div>
+            </form>
+
+            <div class="social-cards">
+              <a
+                class="social-card"
+                href="https://github.com/Bringox123"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="social-card__left">
+                  <img
+                    class="social-card__icon"
+                    src="./assets/icons/github.svg"
+                    alt=""
+                    width="22"
+                    height="22"
+                  />
+                  <div class="social-card__text">
+                    <span class="social-card__label">GITHUB</span>
+                    <span class="social-card__handle">Bringox123</span>
+                  </div>
+                </div>
+                <img
+                  class="social-card__arrow"
+                  src="./assets/icons/arrow-up-right-24.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+              </a>
+
+              <div class="social-card social-card--disabled" aria-disabled="true">
+                <div class="social-card__left">
+                  <img
+                    class="social-card__icon"
+                    src="./assets/icons/linkedin.svg"
+                    alt=""
+                    width="22"
+                    height="22"
+                  />
+                  <div class="social-card__text">
+                    <span class="social-card__label">LINKEDIN</span>
+                    <span class="social-card__handle">Profile URL pending</span>
+                  </div>
+                </div>
+                <img
+                  class="social-card__arrow"
+                  src="./assets/icons/arrow-up-right-24.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-footer">
+          <p class="site-footer__name">Reginald Aaron Dobeng</p>
+          <p class="site-footer__tagline">THOUGHTFUL UI. SOLID FOUNDATIONS.</p>
+          <a class="site-footer__top" href="#top" data-back-to-top>BACK TO TOP &nbsp;↑</a>
+        </div>
+      </div>
+
+      <div class="copy-toast" role="status" aria-live="polite" data-toast hidden></div>
+    </footer>
+
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>

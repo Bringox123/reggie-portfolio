@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Resume of Reginald Aaron Dobeng — Frontend Developer & Emerging UI Designer based in Ghana."
+    />
+    <title>Reginald Aaron Dobeng — Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-default: #0e0e0e;
+        --bg-secondary: #1a1a1a;
+        --text-default: #dac5a7;
+        --text-muted: rgba(218, 197, 167, 0.65);
+        --text-inverse: #0e0e0e;
+        --border-default: rgba(218, 197, 167, 0.16);
+        --surface-glass: rgba(218, 197, 167, 0.05);
+        --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+        --font-serif: 'Cormorant Garamond', Georgia, serif;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background: var(--bg-default);
+        color: var(--text-default);
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font-sans);
+        font-weight: 300;
+        line-height: 1.65;
+        background: var(--bg-default);
+        color: var(--text-default);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .resume-shell {
+        max-width: 960px;
+        margin-inline: auto;
+        padding: clamp(24px, 4vw, 48px) clamp(20px, 4vw, 40px) 72px;
+      }
+
+      /* Top Screen Toolbar */
+      .resume-toolbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 32px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--border-default);
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 999px;
+        padding: 13px 24px;
+        font-family: var(--font-sans);
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        text-decoration: none;
+        cursor: pointer;
+        transition: opacity 200ms ease, border-color 200ms ease, background-color 200ms ease;
+      }
+
+      .btn-primary {
+        background: var(--text-default);
+        color: var(--text-inverse);
+        border: 1px solid var(--text-default);
+      }
+
+      .btn-primary:hover,
+      .btn-primary:focus-visible {
+        opacity: 0.9;
+        outline: none;
+      }
+
+      .btn-secondary {
+        background: var(--bg-secondary);
+        color: var(--text-default);
+        border: 1px solid var(--border-default);
+      }
+
+      .btn-secondary:hover,
+      .btn-secondary:focus-visible {
+        border-color: var(--text-default);
+        outline: none;
+      }
+
+      /* Resume Sheet */
+      .resume-sheet {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-default);
+        padding: clamp(28px, 5vw, 56px);
+      }
+
+      .resume-header {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid var(--border-default);
+      }
+
+      .resume-eyebrow {
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin: 0;
+      }
+
+      .resume-name {
+        font-size: clamp(36px, 5vw, 56px);
+        font-weight: 300;
+        line-height: 1.05;
+        letter-spacing: -0.01em;
+        margin: 0;
+      }
+
+      .resume-name em {
+        font-family: var(--font-serif);
+        font-style: italic;
+        font-weight: 300;
+      }
+
+      .resume-role {
+        font-size: clamp(18px, 2vw, 22px);
+        font-weight: 300;
+        color: var(--text-default);
+        margin: 0;
+      }
+
+      .resume-meta {
+        list-style: none;
+        padding: 0;
+        margin: 6px 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 24px;
+        font-size: 14px;
+        color: var(--text-muted);
+      }
+
+      .resume-meta a {
+        color: var(--text-default);
+        text-decoration: none;
+        border-bottom: 1px solid var(--border-default);
+        transition: border-color 200ms ease;
+      }
+
+      .resume-meta a:hover {
+        border-color: var(--text-default);
+      }
+
+      /* Sections */
+      .resume-section {
+        padding-block: 26px;
+        border-bottom: 1px solid var(--border-default);
+      }
+
+      .resume-section:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .section-title {
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin: 0 0 16px;
+      }
+
+      .summary-copy {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.75;
+        color: var(--text-default);
+        max-width: 72ch;
+      }
+
+      .entries {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .entry {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .entry-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .entry-title {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.3;
+        margin: 0;
+        color: var(--text-default);
+      }
+
+      .entry-tag {
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+
+      .entry-sub {
+        font-size: 14px;
+        color: var(--text-muted);
+        margin: 0;
+      }
+
+      .entry-sub a {
+        color: var(--text-default);
+        text-decoration: none;
+        border-bottom: 1px solid var(--border-default);
+      }
+
+      .entry-list {
+        margin: 6px 0 0;
+        padding-left: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 15px;
+        line-height: 1.65;
+        color: var(--text-muted);
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .skill-group {
+        background: var(--surface-glass);
+        border: 1px solid var(--border-default);
+        padding: 16px 18px;
+      }
+
+      .skill-group__title {
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: var(--text-default);
+        margin: 0 0 8px;
+      }
+
+      .skill-group__items {
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.7;
+        color: var(--text-muted);
+      }
+
+      @media (max-width: 767px) {
+        .skills-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
+      /* High-Contrast Print Stylesheet for PDF Export */
+      @page {
+        size: A4;
+        margin: 14mm 16mm;
+      }
+
+      @media print {
+        html,
+        body {
+          background: #ffffff !important;
+          color: #111111 !important;
+          font-size: 10.5pt;
+          line-height: 1.45;
+        }
+
+        .resume-toolbar {
+          display: none !important;
+        }
+
+        .resume-shell {
+          max-width: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .resume-sheet {
+          background: #ffffff !important;
+          border: none !important;
+          padding: 0 !important;
+        }
+
+        .resume-header,
+        .resume-section {
+          border-color: #d4d4d4 !important;
+          padding-block: 14px;
+        }
+
+        .resume-header {
+          padding-top: 0;
+          padding-bottom: 16px;
+        }
+
+        .resume-name {
+          font-size: 24pt;
+          color: #111111 !important;
+        }
+
+        .resume-role,
+        .entry-title,
+        .summary-copy,
+        .skill-group__title {
+          color: #111111 !important;
+        }
+
+        .resume-eyebrow,
+        .section-title,
+        .resume-meta,
+        .entry-tag,
+        .entry-sub,
+        .entry-list,
+        .skill-group__items {
+          color: #3f3f46 !important;
+        }
+
+        .resume-meta a,
+        .entry-sub a {
+          color: #111111 !important;
+          border-bottom: 1px solid #a1a1aa !important;
+        }
+
+        .skills-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 10px;
+        }
+
+        .skill-group {
+          background: #fafafa !important;
+          border: 1px solid #d4d4d4 !important;
+          padding: 10px 12px;
+        }
+
+        .entry,
+        .skill-group,
+        .resume-section {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="resume-shell">
+      <nav class="resume-toolbar" aria-label="Resume actions">
+        <a class="btn-secondary" href="./index.html">← Back to Portfolio</a>
+        <button class="btn-primary" type="button" data-print-resume>
+          Print / Save PDF
+        </button>
+      </nav>
+
+      <main class="resume-sheet">
+        <header class="resume-header">
+          <p class="resume-eyebrow">Curriculum Vitae</p>
+          <h1 class="resume-name">Reginald Aaron <em>Dobeng</em></h1>
+          <p class="resume-role">Frontend Developer &amp; Emerging UI Designer</p>
+          <ul class="resume-meta">
+            <li>Based in Ghana</li>
+            <li>
+              Email:
+              <a href="mailto:bringoxin@gmail.com">bringoxin@gmail.com</a>
+            </li>
+            <li>
+              GitHub:
+              <a href="https://github.com/Bringox123" target="_blank" rel="noopener noreferrer"
+                >github.com/Bringox123</a
+              >
+            </li>
+            <li>
+              Live Flagship:
+              <a href="https://pos.scaleupsite.online" target="_blank" rel="noopener noreferrer"
+                >pos.scaleupsite.online</a
+              >
+            </li>
+            <li>LinkedIn: Profile URL pending</li>
+          </ul>
+        </header>
+
+        <section class="resume-section" aria-labelledby="resume-summary">
+          <h2 class="section-title" id="resume-summary">Profile</h2>
+          <p class="summary-copy">
+            Frontend developer and emerging UI designer focused on building thoughtful, dependable web
+            interfaces with solid engineering foundations. Combines semantic HTML5, modern CSS3, and
+            Vanilla JavaScript with client-side persistence and Django templating to deliver practical
+            products for real-world retail and everyday workflows.
+          </p>
+        </section>
+
+        <section class="resume-section" aria-labelledby="resume-projects">
+          <h2 class="section-title" id="resume-projects">Selected Projects</h2>
+          <div class="entries">
+            <article class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">ScaleUp POS — Retail Point-of-Sale Interface</h3>
+                <span class="entry-tag">Completed • Flagship</span>
+              </div>
+              <p class="entry-sub">
+                HTML5 • CSS3 • Vanilla JavaScript • IndexedDB / Dexie.js • Django Templates —
+                <a href="https://pos.scaleupsite.online" target="_blank" rel="noopener noreferrer"
+                  >https://pos.scaleupsite.online</a
+                >
+                |
+                <a href="https://github.com/Bringox123" target="_blank" rel="noopener noreferrer"
+                  >https://github.com/Bringox123</a
+                >
+                |
+                <a href="./scaleup-pos.html">Case Study</a>
+              </p>
+              <ul class="entry-list">
+                <li>
+                  Designed and built the cashier checkout interface for uninterrupted counter operations
+                  with clear product catalogue cues, stock indicators, and payment controls.
+                </li>
+                <li>
+                  Structured client-side storage with IndexedDB/Dexie.js alongside Django Templates so
+                  sales flows stay responsive across intermittent connectivity.
+                </li>
+              </ul>
+            </article>
+
+            <article class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">Selasie Farms — Harvest &amp; Produce Storefront</h3>
+                <span class="entry-tag">In Progress</span>
+              </div>
+              <p class="entry-sub">
+                UI Concept &amp; Frontend Build —
+                <a href="https://github.com/Bringox123" target="_blank" rel="noopener noreferrer"
+                  >https://github.com/Bringox123</a
+                >
+              </p>
+              <ul class="entry-list">
+                <li>
+                  Crafting an approachable produce browsing and basket experience centered on editorial
+                  clarity and accessible mobile ordering.
+                </li>
+              </ul>
+            </article>
+
+            <article class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">SaveBod — Personal Savings &amp; Goal Planner</h3>
+                <span class="entry-tag">Early Stage</span>
+              </div>
+              <p class="entry-sub">
+                Product &amp; UI Exploration —
+                <a href="https://github.com/Bringox123" target="_blank" rel="noopener noreferrer"
+                  >https://github.com/Bringox123</a
+                >
+              </p>
+              <ul class="entry-list">
+                <li>
+                  Exploring visual goal tracking, monthly savings plans, and milestone feedback in Ghana
+                  Cedis (GH₵) with a calm, legible interface.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="resume-section" aria-labelledby="resume-skills">
+          <h2 class="section-title" id="resume-skills">Technical Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-group">
+              <h3 class="skill-group__title">01 Frontend &amp; Templating</h3>
+              <p class="skill-group__items">
+                HTML5, CSS3, Vanilla JavaScript, Responsive Web Design, Django Templates, IndexedDB /
+                Dexie.js
+              </p>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group__title">02 UI Design &amp; Prototyping</h3>
+              <p class="skill-group__items">
+                Figma, Interface Layout, Typography &amp; Visual Hierarchy, Design Systems, Interactive
+                Prototypes
+              </p>
+            </div>
+            <div class="skill-group">
+              <h3 class="skill-group__title">03 Networking &amp; Systems</h3>
+              <p class="skill-group__items">
+                Computer Networking Fundamentals, Systems Troubleshooting, Client-Server Architecture,
+                Git &amp; GitHub
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="resume-section" aria-labelledby="resume-experience">
+          <h2 class="section-title" id="resume-experience">Experience &amp; Education</h2>
+          <div class="entries">
+            <article class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">Networking Intern — COCOBOD</h3>
+                <span class="entry-tag">Internship</span>
+              </div>
+              <ul class="entry-list">
+                <li>
+                  Supported local network operations, hardware connectivity checks, and foundational IT
+                  troubleshooting in an enterprise environment.
+                </li>
+              </ul>
+            </article>
+
+            <article class="entry">
+              <div class="entry-head">
+                <h3 class="entry-title">BSc. Information Technology — Level 300</h3>
+                <span class="entry-tag">Education</span>
+              </div>
+              <p class="entry-sub">University of Cape Coast, Accra Campus</p>
+              <ul class="entry-list">
+                <li>
+                  Advancing undergraduate studies in software development, web systems, relational data,
+                  and computer networking.
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const printBtn = document.querySelector('[data-print-resume]');
+      if (printBtn) {
+        printBtn.addEventListener('click', () => window.print());
+      }
+    </script>
+  </body>
+</html>

@@ -1,20 +1,737 @@
-<!doctype html>
-<html lang="en" class="dark scroll-smooth">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Reggie — Full-Stack Developer portfolio." />
-    <title>Reggie — Full-Stack Developer</title>
+    <title>Reginald Aaron Dobeng — Frontend Developer &amp; Emerging UI Designer</title>
+    <meta
+      name="description"
+      content="Portfolio of Reginald Aaron Dobeng, Frontend Developer & Emerging UI Designer based in Ghana."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=DM+Sans:wght@300;400&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/home.css" />
+    <link rel="stylesheet" href="./styles/contact-footer.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="site-logo" href="#top">rad.</a>
+        <button
+          type="button"
+          class="site-nav__toggle"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="nav-drawer"
+          aria-label="Toggle navigation menu"
+        >
+          <svg width="18" height="14" viewBox="0 0 18 14" fill="none" aria-hidden="true">
+            <path
+              d="M1 1.5H17M1 7H17M1 12.5H17"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span>Menu</span>
+        </button>
+        <div class="site-nav__links" id="nav-drawer" data-nav-drawer>
+          <a href="#work">Work</a>
+          <a href="#stack">Stack</a>
+          <a href="#experience">Experience</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="top">
+        <div class="container">
+          <div class="hero__inner">
+            <div class="hero__portrait" data-hero-portrait>
+              <img
+                src="./assets/images/hero-portrait.png"
+                alt="Portrait of Reginald Aaron Dobeng"
+                width="440"
+                height="320"
+              />
+            </div>
+
+            <div class="hero__heading-group" data-hero-heading>
+              <h1 class="hero__title">
+                Reginald Aaron
+                <em class="hero__last">Dobeng</em>
+              </h1>
+              <p class="hero__role">Frontend Developer &amp; Emerging UI Designer</p>
+            </div>
+
+            <div class="hero__copy" data-hero-copy>
+              <p class="hero__lead">
+                I design and build clean, resilient web interfaces grounded in solid frontend
+                foundations—turning everyday workflows across retail checkout, local commerce,
+                and personal finance into calm, usable software.
+              </p>
+              <div class="hero__actions">
+                <a class="btn-primary" href="#work">View Projects</a>
+                <a class="btn-secondary" href="./resume.html">Download Resume</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero__footnote">
+            <span>BASED IN GHANA &nbsp;/&nbsp; BUILDING WITH INTENT</span>
+            <a href="#work">SELECTED WORK BELOW &nbsp;↓</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="work-section" id="work">
+        <div class="container">
+          <div class="section-intro">
+            <p class="section-eyebrow">02 &nbsp;/&nbsp; SELECTED WORK</p>
+            <h2 class="section-heading">Built with <em>purpose.</em></h2>
+            <p class="section-sub">Three products. Real problems. Thoughtful interfaces.</p>
+          </div>
+
+          <div class="projects-stack" data-reveal-group>
+            <article class="project-card project-card--flagship" data-reveal-item>
+              <div class="project-study">
+                <div class="project-study__viewport">
+                  <img
+                    class="project-study__img"
+                    src="./assets/images/scaleup-pos-main.png"
+                    alt="ScaleUp POS cashier terminal interface showing product grid, basket, and payment controls"
+                  />
+                </div>
+                <p class="project-study__caption">INTERFACE STUDY &nbsp;/&nbsp; UI PREVIEW</p>
+              </div>
+
+              <div class="project-details">
+                <span class="badge-pill badge-pill--solid">Completed • Flagship</span>
+                <h3 class="project-details__title">ScaleUp POS</h3>
+                <p class="project-details__subtitle">
+                  Offline-first retail &amp; bakery point-of-sale web application
+                </p>
+                <p class="project-details__label">PROBLEM &amp; ROLE</p>
+                <p class="project-details__body">
+                  Retail and bakery counters lose momentum whenever connections fluctuate or slow
+                  interfaces delay cashiers. I designed and engineered the touch-friendly checkout
+                  terminal, local browser persistence using IndexedDB via Dexie.js and
+                  LocalStorage, and modular Django template views for uninterrupted sales.
+                </p>
+                <div class="project-badges">
+                  <span class="badge-pill">HTML5</span>
+                  <span class="badge-pill">CSS3</span>
+                  <span class="badge-pill">Vanilla JavaScript</span>
+                  <span class="badge-pill">IndexedDB/Dexie.js</span>
+                  <span class="badge-pill">Django Templates</span>
+                </div>
+                <p class="project-details__domain">pos.scaleupsite.online</p>
+                <div class="project-actions">
+                  <a
+                    class="action-link"
+                    href="https://pos.scaleupsite.online"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span class="action-link__icon">
+                      <img
+                        src="./assets/icons/arrow-up-right-18.svg"
+                        alt=""
+                        width="18"
+                        height="18"
+                      />
+                    </span>
+                    <span>Live Site</span>
+                  </a>
+                  <a
+                    class="action-link"
+                    href="https://github.com/Bringox123"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span class="action-link__icon">
+                      <img
+                        src="./assets/icons/arrow-up-right-18.svg"
+                        alt=""
+                        width="18"
+                        height="18"
+                      />
+                    </span>
+                    <span>GitHub</span>
+                  </a>
+                  <a class="action-link" href="./scaleup-pos.html">
+                    <span class="action-link__icon">
+                      <img
+                        src="./assets/icons/arrow-up-right-18.svg"
+                        alt=""
+                        width="18"
+                        height="18"
+                      />
+                    </span>
+                    <span>Case Study</span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            <div class="projects-pair">
+              <article class="project-card project-card--half" data-reveal-item>
+                <div class="project-study">
+                  <div class="project-study__viewport">
+                    <div class="mockup-surface">
+                      <div class="mockup-header">
+                        <span class="mockup-brand">Selasie Farms</span>
+                        <span class="mockup-meta">Shop &nbsp;/&nbsp; Basket (2)</span>
+                      </div>
+                      <div class="mockup-divider"></div>
+                      <p class="mockup-serif-display">
+                        Good food.<br />
+                        Closer to home.
+                      </p>
+                      <p class="mockup-body">
+                        Seasonal farm produce curated with transparent weights, clear harvest
+                        windows, and direct local ordering.
+                      </p>
+                      <div class="selasie-grid">
+                        <div class="selasie-tile">
+                          <span class="mockup-meta">HARVEST 01</span>
+                          <strong>Plantain Bunch</strong>
+                          <span>GH₵ 45</span>
+                        </div>
+                        <div class="selasie-tile">
+                          <span class="mockup-meta">HARVEST 02</span>
+                          <strong>Fresh Tomatoes</strong>
+                          <span>GH₵ 30</span>
+                        </div>
+                        <div class="selasie-tile">
+                          <span class="mockup-meta">HARVEST 03</span>
+                          <strong>Farm Eggs (30)</strong>
+                          <span>GH₵ 65</span>
+                        </div>
+                      </div>
+                      <span class="mockup-cta">Browse the harvest &nbsp;→</span>
+                    </div>
+                  </div>
+                  <p class="project-study__caption">INTERFACE STUDY &nbsp;/&nbsp; CONCEPT MOCKUP</p>
+                </div>
+
+                <div class="project-details">
+                  <span class="badge-pill">In Progress</span>
+                  <h3 class="project-details__title">Selasie Farms</h3>
+                  <p class="project-details__subtitle">
+                    Agricultural &amp; grocery e-commerce web platform
+                  </p>
+                  <p class="project-details__label">PROBLEM &amp; ROLE</p>
+                  <p class="project-details__body">
+                    Bridging local growers and everyday households with an unhurried editorial
+                    storefront, transparent pricing, and a focused mobile basket flow designed
+                    around trust.
+                  </p>
+                  <div class="project-badges">
+                    <span class="badge-pill">HTML5</span>
+                    <span class="badge-pill">CSS3</span>
+                    <span class="badge-pill">JavaScript</span>
+                    <span class="badge-pill">UI Architecture</span>
+                  </div>
+                  <div class="project-actions">
+                    <a
+                      class="action-link action-link--disabled"
+                      aria-disabled="true"
+                      tabindex="-1"
+                    >
+                      <span class="action-link__icon">
+                        <img
+                          src="./assets/icons/arrow-up-right-18.svg"
+                          alt=""
+                          width="18"
+                          height="18"
+                        />
+                      </span>
+                      <span>Live Site</span>
+                    </a>
+                    <a
+                      class="action-link"
+                      href="https://github.com/Bringox123"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span class="action-link__icon">
+                        <img
+                          src="./assets/icons/arrow-up-right-18.svg"
+                          alt=""
+                          width="18"
+                          height="18"
+                        />
+                      </span>
+                      <span>GitHub</span>
+                    </a>
+                    <a class="action-link" href="#contact">
+                      <span class="action-link__icon">
+                        <img
+                          src="./assets/icons/arrow-up-right-18.svg"
+                          alt=""
+                          width="18"
+                          height="18"
+                        />
+                      </span>
+                      <span>Case Study</span>
+                    </a>
+                  </div>
+                  <p class="project-details__note">Live site coming soon</p>
+                </div>
+              </article>
+
+              <article class="project-card project-card--half" data-reveal-item>
+                <div class="project-study">
+                  <div class="project-study__viewport">
+                    <div class="mockup-surface">
+                      <div class="mockup-header">
+                        <span class="mockup-brand">SaveBod</span>
+                        <span class="mockup-meta">YOUR NEXT GOAL</span>
+                      </div>
+                      <div class="mockup-divider"></div>
+                      <p class="mockup-serif-display">A plan for what's next.</p>
+                      <div class="savebod-goal">
+                        <span class="savebod-goal__amount">GH₵ 2,400</span>
+                        <span class="mockup-body">of GH₵ 6,000 saved so far</span>
+                      </div>
+                      <div
+                        class="savebod-bar"
+                        role="progressbar"
+                        aria-valuenow="40"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-label="Savings goal progress at 40 percent"
+                      >
+                        <div class="savebod-bar__fill"></div>
+                      </div>
+                      <div class="savebod-stats">
+                        <div>
+                          <span class="mockup-meta">MONTHLY PLAN</span>
+                          <p class="mockup-body">GH₵ 600</p>
+                        </div>
+                        <div>
+                          <span class="mockup-meta">NEXT MILESTONE</span>
+                          <p class="mockup-body">Halfway there</p>
+                        </div>
+                      </div>
+                      <span class="mockup-cta">Explore my plan &nbsp;→</span>
+                    </div>
+                  </div>
+                  <p class="project-study__caption">
+                    INTERFACE STUDY &nbsp;/&nbsp; PRODUCT EXPLORATION
+                  </p>
+                </div>
+
+                <div class="project-details">
+                  <span class="badge-pill">Early Stage</span>
+                  <h3 class="project-details__title">SaveBod</h3>
+                  <p class="project-details__subtitle">
+                    Goal-based personal savings &amp; milestone planner
+                  </p>
+                  <p class="project-details__label">PROBLEM &amp; ROLE</p>
+                  <p class="project-details__body">
+                    Replacing intimidating financial spreadsheets with calm visual pacing—helping
+                    students and young earners track monthly targets and celebrate steady
+                    progress.
+                  </p>
+                  <div class="project-badges">
+                    <span class="badge-pill">UI Design</span>
+                    <span class="badge-pill">HTML5</span>
+                    <span class="badge-pill">CSS3</span>
+                    <span class="badge-pill">JavaScript</span>
+                  </div>
+                  <div class="project-actions">
+                    <a
+                      class="action-link action-link--disabled"
+                      aria-disabled="true"
+                      tabindex="-1"
+                    >
+                      <span class="action-link__icon">
+                        <img
+                          src="./assets/icons/arrow-up-right-18.svg"
+                          alt=""
+                          width="18"
+                          height="18"
+                        />
+                      </span>
+                      <span>Live Site</span>
+                    </a>
+                    <a
+                      class="action-link"
+                      href="https://github.com/Bringox123"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span class="action-link__icon">
+                        <img
+                          src="./assets/icons/arrow-up-right-18.svg"
+                          alt=""
+                          width="18"
+                          height="18"
+                        />
+                      </span>
+                      <span>GitHub</span>
+                    </a>
+                    <a class="action-link" href="#contact">
+                      <span class="action-link__icon">
+                        <img
+                          src="./assets/icons/arrow-up-right-18.svg"
+                          alt=""
+                          width="18"
+                          height="18"
+                        />
+                      </span>
+                      <span>Case Study</span>
+                    </a>
+                  </div>
+                  <p class="project-details__note">Product exploration in progress</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="skills-section" id="stack">
+        <div class="container">
+          <div class="section-intro">
+            <p class="section-eyebrow">03 &nbsp;/&nbsp; TECHNICAL SKILLS &amp; TOOLCHAIN</p>
+            <h2 class="section-heading">Tools of <em>the craft.</em></h2>
+            <p class="section-sub">
+              Grounded in core web standards, clear interface systems, and practical infrastructure.
+            </p>
+          </div>
+
+          <div class="skills-bento" data-reveal-group>
+            <article class="bento-card" data-reveal-item>
+              <span class="bento-card__num">01</span>
+              <h3 class="bento-card__title">Frontend &amp; Templating</h3>
+              <div class="bento-card__divider"></div>
+              <div class="skill-list">
+                <div class="skill-pill">HTML5 &amp; Semantic Markup</div>
+                <div class="skill-pill">CSS3, Flexbox &amp; CSS Grid</div>
+                <div class="skill-pill">Vanilla JavaScript (ES6+)</div>
+                <div class="skill-pill">Django Templates</div>
+                <div class="skill-pill">IndexedDB / Dexie.js</div>
+                <div class="skill-pill">Responsive Mobile-First UI</div>
+              </div>
+              <p class="bento-card__foot">
+                Clean markup and dependable client-side logic built without unnecessary weight.
+              </p>
+            </article>
+
+            <article class="bento-card" data-reveal-item>
+              <span class="bento-card__num">02</span>
+              <h3 class="bento-card__title">UI Design &amp; Prototyping</h3>
+              <div class="bento-card__divider"></div>
+              <div class="skill-list">
+                <div class="skill-pill">Figma Component Systems</div>
+                <div class="skill-pill">Editorial Typography &amp; Scale</div>
+                <div class="skill-pill">Wireframing &amp; User Flows</div>
+                <div class="skill-pill">Interactive Prototyping</div>
+                <div class="skill-pill">Design-to-Code Parity</div>
+                <div class="skill-pill">Accessibility &amp; Contrast</div>
+              </div>
+              <p class="bento-card__foot">
+                Interfaces shaped around visual hierarchy, clarity, and low-friction interaction.
+              </p>
+            </article>
+
+            <article class="bento-card" data-reveal-item>
+              <span class="bento-card__num">03</span>
+              <h3 class="bento-card__title">Networking &amp; Systems</h3>
+              <div class="bento-card__divider"></div>
+              <div class="skill-list">
+                <div class="skill-pill">Python &amp; Django Fundamentals</div>
+                <div class="skill-pill">SQLite &amp; PostgreSQL</div>
+                <div class="skill-pill">Git &amp; GitHub Workflows</div>
+                <div class="skill-pill">LAN, TCP/IP &amp; Troubleshooting</div>
+                <div class="skill-pill">Role-Based Auth &amp; Sessions</div>
+                <div class="skill-pill">Linux &amp; Deployment Basics</div>
+              </div>
+              <p class="bento-card__foot">
+                Practical systems awareness rooted in real-world networking and IT operations.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience-section" id="experience">
+        <div class="container">
+          <div class="section-intro">
+            <p class="section-eyebrow">04 &nbsp;/&nbsp; EXPERIENCE &amp; EDUCATION</p>
+            <h2 class="section-heading">Where I've <em>grown.</em></h2>
+            <p class="section-sub">
+              Combining enterprise IT support, hands-on product building, and academic study.
+            </p>
+          </div>
+
+          <div class="timeline" data-reveal-group>
+            <div class="timeline__rail" aria-hidden="true"></div>
+
+            <article class="timeline-row" data-reveal-item>
+              <div class="timeline-marker">01</div>
+              <div class="timeline-cat">INTERNSHIP &nbsp;/&nbsp; NETWORKING</div>
+              <div>
+                <h3 class="timeline-role">Networking Intern</h3>
+                <p class="timeline-org">COCOBOD (Ghana Cocoa Board)</p>
+                <p class="timeline-desc">
+                  Supported day-to-day enterprise network operations, workstation connectivity
+                  troubleshooting, hardware diagnostics, and structured cabling checks across
+                  operational offices.
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-row" data-reveal-item>
+              <div class="timeline-marker">02</div>
+              <div class="timeline-cat">PRODUCT ENGINEERING</div>
+              <div>
+                <h3 class="timeline-role">Frontend Developer &amp; UI Builder</h3>
+                <p class="timeline-org">ScaleUp POS &amp; Independent Builds</p>
+                <p class="timeline-desc">
+                  Built and shipped ScaleUp POS with offline-resilient checkout and role-based
+                  Django views, while designing and prototyping Selasie Farms and SaveBod.
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-row" data-reveal-item>
+              <div class="timeline-marker">03</div>
+              <div class="timeline-cat">EDUCATION</div>
+              <div>
+                <h3 class="timeline-role">BSc. Information Technology (Level 300)</h3>
+                <p class="timeline-org">University of Cape Coast, Accra Campus</p>
+                <p class="timeline-desc">
+                  Pursuing an undergraduate degree in Information Technology, bridging software
+                  development, database design, and network systems with practical frontend craft.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section" id="about">
+        <div class="container">
+          <div class="section-intro">
+            <p class="section-eyebrow">05 &nbsp;/&nbsp; ABOUT &amp; COMMUNITY</p>
+            <h2 class="section-heading">Thinking in <em>systems.</em></h2>
+          </div>
+
+          <div class="about-split" data-reveal-group>
+            <div class="about-bio" data-reveal-item>
+              <h3 class="about-bio__heading">05 &nbsp;/&nbsp; About me</h3>
+              <div class="about-bio__body">
+                <figure class="about-portrait">
+                  <img
+                    class="about-portrait__img"
+                    src="./assets/images/about-portrait.png"
+                    alt="Reginald Aaron Dobeng"
+                    width="260"
+                    height="340"
+                  />
+                  <figcaption class="about-portrait__caption">REGINALD AARON DOBENG</figcaption>
+                </figure>
+
+                <div class="about-copy">
+                  <p>
+                    I'm <span class="about-copy__highlight">Reginald Aaron Dobeng</span>, a
+                    frontend developer and emerging UI designer based in Ghana, currently in Level
+                    300 studying BSc. Information Technology at the University of Cape Coast, Accra
+                    Campus.
+                  </p>
+                  <p>
+                    My perspective starts at the infrastructure layer—learning how networks and
+                    systems fail in the real world taught me to value
+                    <span class="about-copy__highlight"
+                      >offline resilience, predictable state, and calm clarity</span
+                    >
+                    at the user interface.
+                  </p>
+                  <p>
+                    Whether crafting a fast cashier terminal in Vanilla JavaScript or translating
+                    Figma grids into semantic CSS3, I care deeply about
+                    <span class="about-copy__highlight"
+                      >thoughtful UI backed by solid engineering</span
+                    >.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-community-col" data-reveal-item>
+              <article class="community-card">
+                <span class="section-eyebrow">06 &nbsp;/&nbsp; COMMUNITY</span>
+                <h3 class="community-card__title">Knowledge, shared.</h3>
+                <p class="community-card__desc">
+                  Learning in public alongside peers at UCC—exchanging code reviews, breaking down
+                  layout fundamentals, and documenting practical patterns in web standards and Git.
+                </p>
+                <p class="community-card__tags">PEER REVIEWS &nbsp;/&nbsp; STUDY SESSIONS &nbsp;/&nbsp; NOTES</p>
+              </article>
+
+              <article class="community-card">
+                <span class="section-eyebrow">06 &nbsp;/&nbsp; COLLABORATION</span>
+                <h3 class="community-card__title">Built together.</h3>
+                <p class="community-card__desc">
+                  Partnering with local founders, small business owners, and backend developers to
+                  turn early product ideas into clean, dependable interfaces ready for real people.
+                </p>
+                <p class="community-card__tags">UI DESIGN &nbsp;/&nbsp; FRONTEND &nbsp;/&nbsp; ITERATION</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="contact-footer" id="contact">
+      <div class="container">
+        <div class="contact-invite">
+          <p class="section-eyebrow">07 &nbsp;/&nbsp; CONTACT</p>
+          <h2>Let's build something <em>solid together.</em></h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-direct">
+            <p class="section-eyebrow">START A CONVERSATION</p>
+            <h3>Good things start with a hello.</h3>
+            <button
+              class="contact-email-trigger"
+              type="button"
+              data-copy-email="bringoxin@gmail.com"
+            >
+              <span>Email &nbsp;↗</span>
+              <span>bringoxin@gmail.com</span>
+            </button>
+            <a class="btn-secondary" href="./resume.html">Download PDF Resume</a>
+            <p class="contact-direct__note">
+              Available for frontend internships, junior developer roles, and UI collaborations.
+            </p>
+          </div>
+
+          <div class="contact-form-col">
+            <form class="contact-card" data-contact-form novalidate>
+              <div class="form-group">
+                <label class="form-label" for="contact-name">Name</label>
+                <input
+                  class="form-field"
+                  id="contact-name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  autocomplete="name"
+                  required
+                />
+                <p class="form-error" data-error="name" aria-live="polite"></p>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email</label>
+                <input
+                  class="form-field"
+                  id="contact-email"
+                  name="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  autocomplete="email"
+                  required
+                />
+                <p class="form-error" data-error="email" aria-live="polite"></p>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Message</label>
+                <textarea
+                  class="form-field"
+                  id="contact-message"
+                  name="message"
+                  placeholder="Tell me about your project or opportunity..."
+                  required
+                ></textarea>
+                <p class="form-error" data-error="message" aria-live="polite"></p>
+              </div>
+
+              <button class="btn-primary" type="submit">Send Message</button>
+
+              <div class="form-confirmation" data-form-confirmation hidden></div>
+            </form>
+
+            <div class="social-cards">
+              <a
+                class="social-card"
+                href="https://github.com/Bringox123"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div class="social-card__left">
+                  <img
+                    class="social-card__icon"
+                    src="./assets/icons/github.svg"
+                    alt=""
+                    width="22"
+                    height="22"
+                  />
+                  <div class="social-card__text">
+                    <span class="social-card__label">GITHUB</span>
+                    <span class="social-card__handle">Bringox123</span>
+                  </div>
+                </div>
+                <img
+                  class="social-card__arrow"
+                  src="./assets/icons/arrow-up-right-24.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+              </a>
+
+              <div class="social-card social-card--disabled" aria-disabled="true">
+                <div class="social-card__left">
+                  <img
+                    class="social-card__icon"
+                    src="./assets/icons/linkedin.svg"
+                    alt=""
+                    width="22"
+                    height="22"
+                  />
+                  <div class="social-card__text">
+                    <span class="social-card__label">LINKEDIN</span>
+                    <span class="social-card__handle">Profile URL pending</span>
+                  </div>
+                </div>
+                <img
+                  class="social-card__arrow"
+                  src="./assets/icons/arrow-up-right-24.svg"
+                  alt=""
+                  width="24"
+                  height="24"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="site-footer">
+          <p class="site-footer__name">Reginald Aaron Dobeng</p>
+          <p class="site-footer__tagline">THOUGHTFUL UI. SOLID FOUNDATIONS.</p>
+          <a class="site-footer__top" href="#top" data-back-to-top>BACK TO TOP &nbsp;↑</a>
+        </div>
+      </div>
+
+      <div class="copy-toast" role="status" aria-live="polite" data-toast hidden></div>
+    </footer>
+
+    <script type="module" src="./scripts/main.js"></script>
   </body>
 </html>
