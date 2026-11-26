@@ -23,8 +23,8 @@
 }
 
 .hero__portrait {
-  width: min(440px, 100%);
-  aspect-ratio: 440 / 320;
+  width: min(360px, 100%);
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   border: 1px solid var(--border-default);
   background: var(--bg-secondary);
@@ -647,9 +647,10 @@
 
 .about-portrait__img {
   width: 100%;
-  aspect-ratio: 260 / 340;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
+  border: 1px solid var(--border-default);
 }
 
 .about-portrait__caption {
