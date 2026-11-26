@@ -9,7 +9,7 @@ const TOAST_DURATION_MS = 2600;
  */
 async function loadMotionEngine() {
   try {
-    const anime = await import('./vendor/anime.esm.js');
+    const anime = await import('animejs');
     if (anime && typeof anime.animate === 'function') {
       const easeOutExpo =
         typeof anime.cubicBezier === 'function'
